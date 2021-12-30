@@ -1,5 +1,3 @@
-
-
 from typing import Optional
 from fastapi import FastAPI, Response, status, HTTPException
 from fastapi.params import Body
@@ -117,31 +115,3 @@ def update_post(id:int, post: Post):
     
     print(post)
     return {"data": post_dict}
-
-@app.get("/post")
-
-@app.get("/posts")
-
-def get_posts():
-    return {"data": my_posts}
-
-@app.post("/createpost")
-def create_posts(post: Post):
-    print(post)
-    print(post.dict())
-
-    return {"data": "new_post"}
-
-# title str, content str,
-
-
-
-
-    post_dict = post.dict()
-    post_dict['id'] = randrange(0, 100000000)
-    my_posts.append(post_dict)
-    return {"data": post_dict}
-
-@app.get("/posts/{id}")
-def get_post(id): 
-
